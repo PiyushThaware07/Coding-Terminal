@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { executeCode } from './api';
 // & ICONS
 import { PiCircleNotchBold } from "react-icons/pi";
+import { FaPlay } from "react-icons/fa";
+
 
 export default function Results({ editorRef, language }) {
     const [output, setOutput] = useState('')
@@ -30,7 +32,7 @@ export default function Results({ editorRef, language }) {
         <div className='h-full p-5 bg-slate-950'>
             <button type='button' isLoading={isLoading} className='flex flex-nowrap items-center gap-1 bg-green-500 text-white px-5 py-2 font-semibold text-sm rounded-md' onClick={RunCode}>
                 <h1>Run Code</h1>
-                {isLoading && <PiCircleNotchBold className='text-lg animate-spin' />}
+                {isLoading ? <PiCircleNotchBold className='text-lg animate-spin' /> : <FaPlay/>}
             </button>
             <br />
             <div className="bg-slate-800 h-full p-5 rounded-lg">
